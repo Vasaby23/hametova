@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* Додаємо вертикальне розміщення */
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+    text-align: center; /* Вирівнювання тексту по центру */
+}
+.photo {
+    display: none; /* Сховати div спочатку */
+    width: 600px;  /* Ширина картинки */
+    height: auto; /* Висота картинки */
+    background-color: lightblue; /* Задній фон для демонстрації */
+    text-align: center;
+    line-height: 200px; /* Вертикальне вирівнювання */
+    font-size: 24px; /* Розмір шрифту */
+}
+
+.Timer{
+    font-size: 54px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.lilia {
+    display: none; /* Сховати div-lilia спочатку */
+    position: absolute; /* Абсолютне позиціювання */
+    top: 0; /* Вирівнюємо зверху */
+    left: 0; /* Вирівнюємо зліва */
+    width: 100%; /* Ширина 100% */
+    height: 100%; /* Висота 100% */
+    background-color: rgba(255, 255, 255, 0.9); /* Задній фон (напівпрозорий) */
+    justify-content: center; /* Горизонтальне вирівнювання */
+    align-items: center; /* Вертикальне вирівнювання */
+    z-index: 0; /* Порядок зображення нижче контейнера */
+}

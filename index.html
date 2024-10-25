@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>хаметова</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="sliv">Слив Хаметовой<br>До сліва <br>залишилось:</h1>
+        <p class="Timer">0000</p>
+        <img class="photo" src="https://i.pinimg.com/736x/12/a9/06/12a9062e43c59eaa7714c292f425396e.jpg" alt="">
+        <div class="lilia"><img src="lilia.png" alt=""></div>
+        <audio id="audio" src="1.mp3" preload="auto"></audio> 
+    </div>
+
+    <script>
+ let timeLeft = 10;
+        const timerElement = document.querySelector('.Timer');
+        const photoElement = document.querySelector('.photo');
+        const liliaElement = document.querySelector('.lilia');
+        const audioElement = document.getElementById('audio');
+        const liliaImage = liliaElement.querySelector('img');
+
+        const countdown = setInterval(() => {
+            timerElement.textContent = timeLeft;
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                timerElement.textContent = "0";
+                photoElement.style.display = 'block';
+
+                setTimeout(() => {
+                    audioElement.play();
+                    photoElement.style.display = 'none';
+                    timerElement.style.display = 'none';
+                    document.querySelector('.sliv').style.display = 'none';
+                    liliaElement.style.display = 'flex';
+                }, 5000);
+
+                setTimeout(() => {
+                    liliaImage.src = "alina.png";
+                    audioElement.src = "2.mp3";
+                    audioElement.play();
+
+                    setTimeout(() => {
+                        liliaImage.src = "fizichka.png";
+                        audioElement.src = "3.mp3";
+                        audioElement.play();
+
+                        audioElement.addEventListener('ended', () => {
+                            audioElement.src = "4.mp3";
+                            audioElement.play();
+
+                            audioElement.addEventListener('ended', () => {
+                                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                            });
+                        });
+                    }, 5000);
+                }, 8000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
